@@ -1,0 +1,7 @@
+nuclei -l katana_results.txt -t /path/to/templates/ -severity medium,high,critical -headless -json -rate-limit 150 -c 100 -interactions -include-rr -o nuclei_scan_results.json
+
+nuclei -l targets.txt -etags outdated,info -itags network,cloud -include-rr -headless -rate-limit 200 -retries 3 -json -o output.json
+
+nuclei -u https://example.com -t /path/to/templates/ -severity critical,high -c 50 -rate-limit 100 -o results.txt -silent -stats
+
+nuclei -l katana_results.txt -t /path/to/templates/ -severity medium,high,critical -headless -rate-limit 150 -c 100 -interactions -stats -o nuclei_scan_results.txt
